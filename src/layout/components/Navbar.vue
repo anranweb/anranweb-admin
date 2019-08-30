@@ -11,7 +11,7 @@
           <!--<i class="el-icon-caret-bottom" />-->
         </div>
         <div class="user-name">
-          {{userInfo.name}}
+          {{ userInfo.name }}
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <router-link to="/">
@@ -50,10 +50,10 @@ export default {
     ...mapGetters([
       'sidebar',
       'avatar',
-      'userInfo',
+      'userInfo'
     ])
   },
-  mounted(){
+  mounted() {
     // console.log(this.userInfo)
   },
   methods: {

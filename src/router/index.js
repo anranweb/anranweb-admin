@@ -110,8 +110,8 @@ export const asyncRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://www.anranweb.cn/',
+        meta: { title: '网站首页', icon: 'link' }
       }
     ]
   },

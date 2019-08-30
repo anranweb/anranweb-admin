@@ -43,7 +43,6 @@
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
-
     </el-form>
   </div>
 </template>
@@ -105,12 +104,12 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          let nd = {
+          const nd = {
             username: this.loginForm.username,
             password: md5(this.loginForm.password)
           }
           this.$store.dispatch('user/login', nd).then(() => {
-            //this.$router.push({ path: this.redirect || '/' })
+            // this.$router.push({ path: this.redirect || '/' })
             this.$router.push({ path: '/' })
             this.loading = false
           }).catch(() => {

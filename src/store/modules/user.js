@@ -51,11 +51,13 @@ const actions = {
           reject('Verification failed, please Login again.')
         }
         const { name, grade, roles } = response
-        const rolesArray = roles.split(',')
         commit('SET_USERINFO', response)
         commit('SET_NAME', name)
         commit('SET_AVATAR', grade)
-        commit('SET_ROLES', rolesArray)
+        if (roles !== null) {
+          const rolesArray = roles.split(',')
+          commit('SET_ROLES', rolesArray)
+        }
         resolve(response)
       }).catch(error => {
         reject(error)

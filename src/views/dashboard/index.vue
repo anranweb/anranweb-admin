@@ -2,7 +2,9 @@
   <div class="dashboard-container">
     <div class="dashboard-box">
       <div class="dashboard-text">用户名: <span ref="wheel">{{ name }}</span></div>
-      <div class="dashboard-text">账户类型: <span> {{ avatar | avatarFilter }}</span></div>
+
+      <el-calendar v-model="dataValue"/>
+
     </div>
   </div>
 </template>
@@ -12,24 +14,20 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Dashboard',
+  data() {
+    return {
+      infoMsg: '',
+      dataValue: new Date()
+    }
+  },
   computed: {
     ...mapGetters([
       'name',
       'avatar'
     ])
   },
-  filters: {
-    avatarFilter(val) {
-      const nd = ['神秘用户', '普通用户', '管理员']
-      return nd[val]
-    }
-  },
-  data() {
-    return {
-      infoMsg: ''
-    }
-  },
   mounted() {
+    console.log('进入首页')
     this.$refs.wheel.style = `color: #67c23a`
   }
 }
