@@ -1,9 +1,9 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-box">
-      <div class="dashboard-text">用户名: <span ref="wheel">{{ name }}</span></div>
+      <div class="dashboard-text">欢迎: <span ref="wheel">{{ name }}</span></div>
 
-      <el-calendar v-model="dataValue"/>
+      <el-calendar v-model="dataValue" />
 
     </div>
   </div>
